@@ -1,0 +1,28 @@
+html,body{
+	margin: 0px
+}
+
+.no-margin{
+	margin: 0px;
+}
+
+#logo{
+	font-size: 2.5em;
+}
+
+.be-green{
+	background-color: rgb(50,200,50)
+}
+
+.white{
+	color: white;
+}
+
+.large-padding{
+	padding: 5px 0px;
+}
+
+a,a:visited{
+	color : inherit !important;
+	text-decoration: none;
+}

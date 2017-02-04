@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Petbase2</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+
+  </head>
+
+  <body>
+  <header>
+  	<nav class = "be-green white large-padding">
+	  	<ul class = "no-list row  center-xs middle-xs">
+	  		<li class = "col-md-2">
+	  			<h1 class = "no-margin" id = "logo"> PetBase </h1>
+	  		</li>
+	  		<li class = "col-md">
+	  			<%= link_to "Inicio" , root_path%>
+	  		</li>
+	  		<li class = "col-md">
+	  			<%= link_to "Ver Base de Mascotas" , people_path%>
+	  		</li>
+	  		<li class = "col-md">
+	  			<%= link_to "Nueva Mascota Para la Base" , new_person_path%>
+	  		</li>
+  		</ul>
+  	</nav>
+  </header>
+
+  <%= yield %>
+  
+  </body>
+</html>

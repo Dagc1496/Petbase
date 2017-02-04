@@ -1,0 +1,52 @@
+<%= form_for(person) do |f| %>
+  <% if person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :'Nombre de la persona' %>
+    <%= f.text_field :person_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Numero de Identificacion' %>
+    <%= f.number_field :person_Id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Telefono de la persona' %>
+    <%= f.number_field :person_tel %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Nombre de la mascota' %>
+    <%= f.text_field :pet_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Descripcion de la mascota' %>
+    <%= f.text_area :pet_description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Foto de la mascota' %><br>
+    <%= f.file_field :image %>
+    <% if f.object.image? %>
+      <%= image_tag f.object.image.thumb.url %>
+      <%= f.label :remove_image %>
+      <%= f.check_box :remove_image %> 
+    <% end %>
+  </div>
+
+  <div class="actions">  
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>People</h1>
+
+<table>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.person_name %></td>
+        <td><%= person.person_Id %></td>
+        <td><%= person.person_tel %></td>
+        <td><%= person.pet_name %></td>
+        <td><%= link_to 'Ver Detalles', person %></td>
+        <td><%= link_to 'Eliminar', person, method: :delete, data: { confirm: 'Esta seguro que desea eliminar de la base de datos esta mascota?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Mascota', new_person_path %>
